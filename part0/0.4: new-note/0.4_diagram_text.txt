@@ -1,0 +1,44 @@
+0.4 New note
+
+Browser->Server: Hello Mr. S! Here is my new note - HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note right of Server: 
+- Data in the input field is saved as the value of the name attribute and submitted to the server
+- The server creates a new Note object and adds it to the notes array
+- Note object has 2 fields: content (actually content of the note) & date (date and time when note was created)
+- Notes are saved in the data.json file
+end note
+
+Server-->Browser: Oh, hello Mrs. B! I got your note. Now please send me a new, GET request to /exampleapp/notes to view yours and other notes
+
+Browser->Server: Sure thing, Mr. S, here you go - HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+
+Server-->Browser: Thank you for your request. Here is the /exampleapp/notes HTML code
+
+note right of Server: 
+- Browser executes HTML code which requests additional files, main.css & main.js
+end note
+
+Browser->Server: Oh, great! But it doesn't look that nice. :( Can you please send me the CSS file as well - HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+Server-->Browser: Oh, course, here you go - main.css
+
+Browser->Server: Hmmm, I don't see any notes. I think I need Javascript magic for that - HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+Server-->Browser: Sure thing, here you go - main.js
+
+note right of Server: 
+- Browser executes JavaScript code which requests data from the JSON file
+end note
+
+Browser->Server: One more thing missing is the data itself. Can you please fetch that as well - HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+Server-->Browser: Silly me, how did I forget the most important thing - [{content: "Any Pearl Jam fans here? :)", date: "2021-05-18T09:39:06.318Z"}, ...]
+
+note right of Server: 
+- Browser executes event handler which renders our new note and all the other notes to the page
+end note
+
+Browser->Server: No worries. While you're at it, please send me the favicon.ico as well - HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+
+Server-->Browser: You got it - favicon.ico

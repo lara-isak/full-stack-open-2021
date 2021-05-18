@@ -1,0 +1,12 @@
+title 0.6: SPA: New note
+
+Browser->Server: Hello Mr. S! Here is my new note - HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note right of Server: 
+- SPA doesn't fetch .css / .js files again, it fetched them in the initial request when the /spa page was loaded
+- POST request already contains the new note (with both fields, content & date) as JSON data
+- content-type header tells server in which format the data is send (application/json; charset=utf-8)
+- e.preventDefault() prevents the default handling of the form submit (sending the data to the server and causing a new GET request)
+end note
+
+Server-->Browser: Oh, hello Mrs. B! I got your note. No need to send any additional request, here is your note and all the other notes

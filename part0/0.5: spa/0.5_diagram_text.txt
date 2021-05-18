@@ -1,0 +1,33 @@
+0.5: Single page application
+
+Browser->Server: Hello Mr. S! Can you please fetch me the HTML code for The Notes -- singe page app site- HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+Server-->Browser: Oh, hello Mrs. B! Sure thing, here you go - HTML code
+
+note right of Server: 
+- Browser executes HTML code which requests additional files, main.css & spa.js
+end note
+
+Browser->Server: Oh, great! But it doesn't look that nice. :( Can you please send me the CSS file as well - HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+Server-->Browser: Oh, course, here you go - main.css
+
+Browser->Server: Hmmm, I don't see any notes. I think I need Javascript magic for that - HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+
+Server-->Browser: Sure thing, here you go - spa.js
+
+note right of Server: 
+- Browser executes JavaScript code which requests data from the JSON file
+end note
+
+Browser->Server: One more thing missing is the data itself. Can you please fetch that as well - HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+Server-->Browser: Silly me, how did I forget the most important thing - data.json
+
+note right of Server: 
+- Browser executes event handler which renders all the notes to the page
+end note
+
+Browser->Server: No worries. While you're at it, please send me the favicon.ico as well - HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+
+Server-->Browser: You got it - favicon.ico
