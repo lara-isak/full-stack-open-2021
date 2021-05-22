@@ -1,6 +1,24 @@
 // import the useState Hook from React
 import React, { useState } from 'react'
 
+// Display component
+const Display = (props) => {
+  return(
+    <>
+      <p>Currently your favorite PJ song is {props.song}</p>
+    </>
+  )
+}
+
+// Button component
+const Button = (props) => {
+  return(
+    <button onClick={props.handleClick}>
+      {props.text}
+    </button>
+  )
+}
+
 const App = () => {
   /* 
     - declaring the new state variable by calling the useState Hook
@@ -8,12 +26,17 @@ const App = () => {
     - useState Hook retuns a pair of values (initial / current state, function that updates the initial / current state) which we assign to song & updateSong variables (in this specific example)
     - 
   */
-  const [ song, updateSong ] = useState("Nothingman")
+  const [ song, setSong ] = useState("Nothingman")
+
+  const displayNewSong = () => setSong(prompt("What is your favorite PJ song now?"))
+
+  const setFavoriteSong = () => setSong("Nothingman")
 
   return (
     <div>
-      <p>Currently your favorite PJ song is {song}</p>
-      <button onClick={() => updateSong(prompt("What is your favorite PJ song now?"))}>Update song</button>
+      <Display song={song} />
+      <Button handleClick={displayNewSong} text="Update song" />
+      <Button handleClick={setFavoriteSong} text="All time favorite" />
     </div>
   )
 }
