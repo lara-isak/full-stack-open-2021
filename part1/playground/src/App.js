@@ -2,22 +2,10 @@
 import React, { useState } from 'react'
 
 // Display component
-const Display = (props) => {
-  return(
-    <>
-      <p>Currently your favorite PJ song is {props.song}</p>
-    </>
-  )
-}
+const Display = ({song}) => <><p>Currently your favorite PJ song is {song}</p></>
 
 // Button component
-const Button = (props) => {
-  return(
-    <button onClick={props.handleClick}>
-      {props.text}
-    </button>
-  )
-}
+const Button = ({handleClick, text}) => <button onClick={handleClick}>{text}</button>
 
 const App = () => {
   /* 
